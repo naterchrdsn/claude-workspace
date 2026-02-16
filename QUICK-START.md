@@ -6,8 +6,8 @@ Get up and running with claude-workspace in 5 minutes.
 
 A production-ready collection of **agents**, **commands**, and **documentation** for working with Claude.
 
-- ✅ 4 Specialized agents (System Architect, Tech Stack Researcher, Requirements Analyst, Security Engineer)
-- ✅ 6 Core commands (Test, Debug, Plan, Refactor, Explain, Optimize)
+- ✅ 9 Specialized agents (System Architect, Backend Architect, Frontend Architect, Tech Stack Researcher, Requirements Analyst, Performance Engineer, Security Engineer, Technical Writer, Deep Research Agent)
+- ✅ 9 Core commands (Test, Debug, Plan, Refactor, Explain, Optimize, Perf Audit, Research, Docs)
 - ✅ Documentation playbook and example project structure
 - ✅ Processing protocol for handling large documents efficiently
 - ✅ Everything is research-backed and practical
@@ -81,6 +81,9 @@ In Claude Code or Claude.ai, use commands directly:
 /refactor "code"    # Refactor safely
 /explain "concept"  # Explain code or ideas
 /optimize "slow"    # Fix performance
+/perf-audit "flow"  # Performance baseline
+/research "topic"   # Evidence-backed research
+/docs "goal"        # Documentation task
 ```
 
 ## Step 4: Use Agents (Optional, 1 min)
@@ -89,9 +92,14 @@ For complex decisions:
 
 ```
 @system-architect        # Design architecture
+@backend-architect       # Design backend systems
+@frontend-architect      # Design UI architecture
 @tech-stack-researcher   # Plan technology
 @requirements-analyst    # Clarify specs
+@performance-engineer    # Optimize performance
 @security-engineer       # Assessment
+@technical-writer        # Documentation
+@deep-research-agent     # Research synthesis
 ```
 
 ## Step 5: Read Key Documentation
@@ -137,7 +145,7 @@ You now have a Claude workspace configured for your project.
 - `/test`, `/debug`, `/plan`, `/refactor`
 
 **Agents** = Expert work (minutes/hours)
-- Architecture, tech choices, requirements, security
+- Architecture, backend/frontend design, performance, documentation, research
 
 **Documentation** = Written to be read
 - Progressive disclosure, scannable, specific examples

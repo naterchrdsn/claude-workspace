@@ -33,6 +33,46 @@ Agents are for **strategic decisions** (architecture, requirements, security).
 
 ---
 
+### Backend Architect
+
+**Purpose:** Design reliable backend systems with focus on data integrity, security, and fault tolerance
+
+**Use When:**
+- Designing server-side APIs or data services
+- Evaluating database schema and query patterns
+- Planning reliability, security, and observability
+- Handling backend scalability constraints
+
+**Delivers:**
+- API specifications with security considerations
+- Database schemas with indexing and constraints
+- Reliability patterns and observability guidance
+- Performance and scaling recommendations
+
+**Example:** "Design a fault-tolerant API and database schema for our billing system"
+
+---
+
+### Frontend Architect
+
+**Purpose:** Create accessible, performant user interfaces with strong UX foundations
+
+**Use When:**
+- Building or redesigning UI component systems
+- Ensuring WCAG compliance and accessibility
+- Improving Core Web Vitals and frontend performance
+- Establishing responsive design patterns
+
+**Delivers:**
+- Accessible component patterns
+- Performance improvement plans
+- Responsive layout guidance
+- UX and interaction design notes
+
+**Example:** "Design an accessible dashboard UI with strong performance metrics"
+
+---
+
 ### Tech Stack Researcher
 
 **Purpose:** Research technology choices and architecture recommendations
@@ -77,6 +117,26 @@ Agents are for **strategic decisions** (architecture, requirements, security).
 
 ---
 
+### Performance Engineer
+
+**Purpose:** Optimize system performance through measurement-driven analysis and bottleneck elimination
+
+**Use When:**
+- Investigating slow endpoints or UI responsiveness
+- Establishing baselines and performance budgets
+- Prioritizing high-impact optimization work
+- Validating before/after performance changes
+
+**Delivers:**
+- Performance audits with bottlenecks
+- Before/after benchmarks
+- Optimization recommendations
+- Performance regression guidance
+
+**Example:** "Profile checkout flow and propose optimizations with measurable gains"
+
+---
+
 ### Security Engineer
 
 **Purpose:** Identify vulnerabilities and ensure compliance
@@ -99,14 +159,59 @@ Agents are for **strategic decisions** (architecture, requirements, security).
 
 ---
 
+### Technical Writer
+
+**Purpose:** Create clear, comprehensive technical documentation tailored to specific audiences
+
+**Use When:**
+- Writing API documentation or technical specs
+- Creating user guides and tutorials
+- Improving documentation structure and clarity
+- Ensuring documentation accessibility and usability
+
+**Delivers:**
+- API references and how-to guides
+- Structured documentation outlines
+- Troubleshooting and installation docs
+- Accessibility-focused documentation
+
+**Example:** "Create a developer-friendly API guide with examples"
+
+---
+
+### Deep Research Agent
+
+**Purpose:** Conduct comprehensive research with adaptive strategies and evidence-based synthesis
+
+**Use When:**
+- Investigating complex topics with multiple sources
+- Producing research-backed recommendations
+- Synthesizing findings across domains
+- Needing citations and confidence levels
+
+**Delivers:**
+- Research plans and methodology
+- Evidence-backed findings
+- Source lists and citations
+- Synthesis with confidence statements
+
+**Example:** "Research the best approaches to realtime data sync and summarize trade-offs"
+
+---
+
 ## Agent vs. Command Decision Tree
 
 ```
 Does it involve:
-├─ Designing system architecture? → System Architect
+├─ System-level architecture? → System Architect
+├─ Backend design or data integrity? → Backend Architect
+├─ Frontend UX or accessibility? → Frontend Architect
 ├─ Planning new technology approach? → Tech Stack Researcher
 ├─ Clarifying vague requirements? → Requirements Analyst
+├─ Performance bottlenecks? → Performance Engineer
 ├─ Security assessment? → Security Engineer
+├─ Documentation quality? → Technical Writer
+├─ Deep research or synthesis? → Deep Research Agent
 └─ Quick routine task?
    ├─ Run tests → /test command
    ├─ Debug a bug → /debug command
@@ -127,11 +232,15 @@ Does it involve:
    - Use `/test` and `/debug` for routine work
 
 3. **Review Phase**
-   - Use System Architect if major architectural concerns
-   - Use Security Engineer if security implications
+   - Use System Architect for architectural concerns
+   - Use Backend Architect for server-side risk review
+   - Use Frontend Architect for UX and accessibility review
+   - Use Security Engineer for security implications
+   - Use Technical Writer for doc quality and clarity
 
 4. **Optimization Phase**
-   - Use `/optimize` command for performance
+   - Use Performance Engineer for measurement-driven optimization
+   - Use `/optimize` command for focused performance work
    - Use `/refactor` command for code quality
 
 ## How to Invoke Agents
@@ -150,6 +259,11 @@ Does it involve:
 
 See:
 - [system-architect.md](../agents/system-architect.md)
+- [backend-architect.md](../agents/backend-architect.md)
+- [frontend-architect.md](../agents/frontend-architect.md)
 - [tech-stack-researcher.md](../agents/tech-stack-researcher.md)
 - [requirements-analyst.md](../agents/requirements-analyst.md)
+- [performance-engineer.md](../agents/performance-engineer.md)
 - [security-engineer.md](../agents/security-engineer.md)
+- [technical-writer.md](../agents/technical-writer.md)
+- [deep-research-agent.md](../agents/deep-research-agent.md)

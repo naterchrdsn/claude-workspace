@@ -14,12 +14,14 @@ See [SOURCES.md](SOURCES.md) for full attribution.
 ### 🚀 Ready to Use
 
 **Commands** — Quick workflows for development tasks
-- Test, Debug, Plan, Refactor, Explain, Optimize
+- Test, Debug, Plan, Refactor, Explain, Optimize, Perf Audit, Research, Docs
 - Type `/command-name` to invoke
 - See [Command Reference](docs/command-reference.md)
 
 **Agents** — Expert AI personas for complex work
-- System Architect, Tech Stack Researcher, Requirements Analyst, Security Engineer
+- System Architect, Backend Architect, Frontend Architect
+- Tech Stack Researcher, Requirements Analyst, Performance Engineer
+- Security Engineer, Technical Writer, Deep Research Agent
 - Use for strategic decisions and deep analysis
 - See [Agent Reference](docs/agent-reference.md)
 
@@ -89,6 +91,9 @@ In Claude Code or Claude.ai:
 /refactor "code"    # Refactor safely
 /explain "concept"  # Explain code or idea
 /optimize "slow"    # Fix performance issues
+/perf-audit "flow"  # Measure and optimize performance
+/research "topic"   # Evidence-backed research
+/docs "goal"        # Create or improve documentation
 ```
 
 ### 4. Use Agents
@@ -97,9 +102,14 @@ For complex work:
 
 ```
 @system-architect          # Design scalable architecture
+@backend-architect         # Design reliable backend systems
+@frontend-architect        # Build accessible, performant UI
 @tech-stack-researcher     # Plan technology choices
 @requirements-analyst      # Clarify ambiguous specs
+@performance-engineer      # Measure and improve performance
 @security-engineer         # Assess security
+@technical-writer          # Create clear documentation
+@deep-research-agent       # Evidence-backed research and synthesis
 ```
 
 ## Common Workflows
@@ -109,7 +119,7 @@ For complex work:
 1. **Clarify requirements** → Use `@requirements-analyst`
 2. **Plan implementation** → Use `/plan` command
 3. **Develop iteratively** → Use `/test`, `/debug`, `/refactor`
-4. **Validate architecture** → Use `@system-architect` if needed
+4. **Validate architecture** → Use `@system-architect`, `@backend-architect`, or `@frontend-architect`
 
 ### Debugging a Bug
 
@@ -124,7 +134,7 @@ For complex work:
 1. **Establish baseline** → Measure current performance
 2. **Identify bottleneck** → Use `/optimize` command
 3. **Research alternatives** → `@tech-stack-researcher` if major changes
-4. **Implement and measure** → Verify gains justify complexity
+4. **Measure and optimize** → Use `@performance-engineer` for baseline + bottlenecks
 5. **Verify** → Use `/test` to ensure nothing broke
 
 ### Refactoring Code
@@ -172,7 +182,10 @@ For complex work:
 - Strategic architecture decisions
 - Technology research and planning
 - Requirements clarification
+- Performance optimization and profiling
+- Documentation design and clarity
 - Security assessment
+- Deep research and synthesis
 - Time to value: minutes to hours
 - Deep, sustained focus
 
@@ -193,9 +206,14 @@ claude-workspace/
 │
 ├── agents/                             # Expert personas
 │   ├── system-architect.md
+│   ├── backend-architect.md
+│   ├── frontend-architect.md
 │   ├── tech-stack-researcher.md
 │   ├── requirements-analyst.md
-│   └── security-engineer.md
+│   ├── performance-engineer.md
+│   ├── security-engineer.md
+│   ├── technical-writer.md
+│   └── deep-research-agent.md
 │
 ├── commands/                           # Quick workflows
 │   ├── test.md
@@ -227,6 +245,11 @@ Commands and agents work in Claude Code when you have this repo open:
 ```
 /test               # Available as a command
 @system-architect   # Available as an agent
+@backend-architect  # Available as an agent
+@frontend-architect # Available as an agent
+@performance-engineer # Available as an agent
+@technical-writer   # Available as an agent
+@deep-research-agent # Available as an agent
 ```
 
 ### In Your Project
@@ -262,15 +285,23 @@ You work with [Name], building [Project].
 | `/refactor` | Cleaning up code |
 | `/explain` | Learning the codebase |
 | `/optimize` | Performance is slow |
+| `/perf-audit` | Baseline and bottleneck analysis |
+| `/research` | Evidence-backed research needed |
+| `/docs` | Writing or improving documentation |
 
 ### When to Use Agents
 
 | Agent | Use When |
 |-------|----------|
 | System Architect | Designing system architecture |
+| Backend Architect | Designing APIs and data systems |
+| Frontend Architect | UX, accessibility, and UI architecture |
 | Tech Stack Researcher | Planning new tech choices |
 | Requirements Analyst | Specs are vague/unclear |
+| Performance Engineer | Measuring and improving performance |
 | Security Engineer | Security assessment needed |
+| Technical Writer | Writing or improving documentation |
+| Deep Research Agent | Research synthesis with citations |
 
 ## Token Efficiency
 
@@ -358,7 +389,7 @@ See [SOURCES.md](SOURCES.md) for details.
 2. **Customize CLAUDE.md** — Add your project context
 3. **Try a command** — Use `/test` or `/debug`
 4. **Read documentation** — Start with [Documentation Playbook](docs/documentation-playbook.md)
-5. **Use agents for complex work** — Try `@requirements-analyst` or `@system-architect`
+5. **Use agents for complex work** — Try `@requirements-analyst`, `@backend-architect`, or `@system-architect`
 
 ## Questions or Improvements?
 

@@ -27,6 +27,13 @@ Quick navigation for claude-workspace documentation.
 - [SOURCES.md](../SOURCES.md) — Attribution and sources
 - [Example Project Structure](../examples/example-project-structure.md) — Template for new projects
 
+**Templates**
+- [research-report.md](templates/research-report.md) — Research report template
+- [performance-audit.md](templates/performance-audit.md) — Performance audit template
+- [api-spec.md](templates/api-spec.md) — API specification template
+- [ui-accessibility-checklist.md](templates/ui-accessibility-checklist.md) — Accessibility checklist
+- [documentation-brief.md](templates/documentation-brief.md) — Documentation brief template
+
 ## For Your Projects
 
 ### Setting Up a New Project
@@ -63,14 +70,22 @@ See [Command Reference](command-reference.md) for:
 - `/refactor` — Safe refactoring
 - `/explain` — Code/concept explanation
 - `/optimize` — Performance optimization
+- `/perf-audit` — Measurement-driven performance audit
+- `/research` — Evidence-backed research
+- `/docs` — Documentation workflow
 
 ### Agents
 
 See [Agent Reference](agent-reference.md) for:
 - **System Architect** — Scale and design
+- **Backend Architect** — APIs and data systems
+- **Frontend Architect** — UX and accessibility
 - **Tech Stack Researcher** — Technology choices
 - **Requirements Analyst** — Specification
+- **Performance Engineer** — Measurement-driven optimization
 - **Security Engineer** — Security & compliance
+- **Technical Writer** — Documentation clarity
+- **Deep Research Agent** — Research synthesis
 
 ## By Use Case
 

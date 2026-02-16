@@ -6,16 +6,21 @@ A comprehensive master repository at `c:\DEV\claude-workspace` that combines the
 
 ## 📦 What You're Getting
 
-### **4 Specialized Agents**
+### **9 Specialized Agents**
 ```
 agents/
 ├── system-architect.md           → Design and scale systems
+├── backend-architect.md          → Reliable backend design
+├── frontend-architect.md         → Accessible UI architecture
 ├── tech-stack-researcher.md      → Evaluate technology choices  
 ├── requirements-analyst.md       → Clarify ambiguous specs
-└── security-engineer.md          → Security assessment
+├── performance-engineer.md       → Measure and optimize performance
+├── security-engineer.md          → Security assessment
+├── technical-writer.md           → Documentation clarity
+└── deep-research-agent.md        → Research synthesis
 ```
 
-### **6 Core Commands**
+### **9 Core Commands**
 ```
 commands/
 ├── test.md        → Run tests and analyze failures
@@ -23,7 +28,10 @@ commands/
 ├── plan.md        → Create implementation plans
 ├── refactor.md    → Refactor code safely
 ├── explain.md     → Explain code or concepts
-└── optimize.md    → Performance optimization
+├── optimize.md    → Performance optimization
+├── perf-audit.md  → Measurement-driven performance audit
+├── research.md    → Evidence-backed research
+└── docs.md        → Documentation workflow
 ```
 
 ### **Comprehensive Documentation**
@@ -43,6 +51,7 @@ Root files:
 ├── README.md                     → Complete overview (375 lines)
 ├── QUICK-START.md                → Get running in 5 minutes
 ├── FILE-STRUCTURE.md             → Navigation map
+├── FILE-MANIFEST.md              → Full file listing
 └── CREATION-SUMMARY.md           → This delivery summary
 
 Supporting:
@@ -70,10 +79,10 @@ Supporting:
 
 | Component | Count |
 |-----------|-------|
-| Total Files | 21+ |
-| Agents | 4 |
-| Commands | 6 |
-| Documentation Files | 8 |
+| Total Files | 38 |
+| Agents | 9 |
+| Commands | 9 |
+| Documentation Files | 10 |
 | Total Size | ~500KB |
 | Total Lines | 2,000+ |
 
@@ -124,7 +133,7 @@ MyProject: Brief description
 
 ### Immediately
 - ✅ Use `/test`, `/debug`, `/plan`, `/refactor`, `/explain`, `/optimize` commands
-- ✅ Use `@system-architect`, `@tech-stack-researcher`, `@requirements-analyst`, `@security-engineer` agents
+- ✅ Use `@system-architect`, `@backend-architect`, `@frontend-architect`, `@tech-stack-researcher`, `@requirements-analyst`, `@performance-engineer`, `@security-engineer`, `@technical-writer`, `@deep-research-agent`
 - ✅ Follow documentation playbook for writing docs
 - ✅ Copy example project structure for new projects
 
@@ -154,9 +163,14 @@ CLAUDE.md (Project Context)
 │                                    │
 │ Agents:                            │
 │  @system-architect                 │
+│  @backend-architect                │
+│  @frontend-architect               │
 │  @tech-stack-researcher            │
 │  @requirements-analyst             │
+│  @performance-engineer             │
 │  @security-engineer                │
+│  @technical-writer                 │
+│  @deep-research-agent              │
 └───────────────────────────────────┘
     ↓
 Supported by Documentation:
@@ -207,7 +221,7 @@ Supported by Documentation:
 - **FILE-STRUCTURE.md** — Navigation map and guide
 - **CREATION-SUMMARY.md** — This summary
 - **LICENSE** — MIT License
-- **agents/** — 4 expert AI personas
+- **agents/** — 9 expert AI personas
 - **commands/** — 6 quick development workflows
 - **docs/** — 8 key documentation guides
 - **examples/** — Example project structures and templates

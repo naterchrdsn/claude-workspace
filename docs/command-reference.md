@@ -12,6 +12,9 @@ Quick lookup for available commands.
 | `/refactor` | Refactor code safely | When cleaning up or reducing duplication |
 | `/explain` | Break down code or concepts | When learning codebase or understanding patterns |
 | `/optimize` | Find and fix performance issues | When addressing slow features or bottlenecks |
+| `/perf-audit` | Run a measurement-driven performance audit | When you need baseline and bottleneck analysis |
+| `/research` | Conduct deep research with synthesis | When you need evidence-backed recommendations |
+| `/docs` | Create or improve documentation | When writing or refining technical docs |
 
 ## Usage Patterns
 
@@ -49,6 +52,26 @@ Quick lookup for available commands.
   → Suggest improvements
   → Implement with verification
   → /test (ensure nothing broke)
+
+### Research Workflow
+
+```
+/research "compare Redis vs Kafka for event streaming"
+  → Clarify scope and constraints
+  → Gather sources
+  → Synthesize findings with citations
+  → Deliver research report
+```
+
+### Documentation Workflow
+
+```
+/docs "write API usage guide for payments"
+  → Define audience and goal
+  → Draft with examples first
+  → Add verification steps
+  → Review for clarity
+```
 ```
 
 ## Advanced Patterns
@@ -84,3 +107,6 @@ See:
 - [refactor.md](../commands/refactor.md) — Refactoring safely
 - [explain.md](../commands/explain.md) — Understanding code
 - [optimize.md](../commands/optimize.md) — Performance optimization
+- [perf-audit.md](../commands/perf-audit.md) — Measurement-driven performance audit
+- [research.md](../commands/research.md) — Evidence-backed research
+- [docs.md](../commands/docs.md) — Documentation workflow
