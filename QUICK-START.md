@@ -132,48 +132,6 @@ When you need guidance:
 - **[Agent Reference](docs/agent-reference.md)** — When to use agents
 - **[Example Project Structure](examples/example-project-structure.md)** — Directory layout template
 
-## Done! 🎉
-
-You now have a Claude workspace configured for your project.
-
-## Common Next Steps
-
-### "I want to start a new feature"
-1. Use `@requirements-analyst` if specs are unclear
-2. Use `/plan "feature name"`
-3. Work iteratively with `/test`, `/debug`, `/refactor`
-
-### "I need to fix a bug"
-1. Use `/debug "describe the bug"`
-2. Systematically investigate
-3. Use `/test` to verify the fix
-
-### "I need to optimize performance"
-1. Establish baseline (measure current performance)
-2. Use `/optimize "slow part"`
-3. Implement improvements
-4. Verify with `/test`
-
-### "I need to write documentation"
-1. Read [Documentation Playbook](docs/documentation-playbook.md)
-2. Follow the structure for your document type
-3. Use progressive disclosure
-4. Link between related docs
-
-## Key Principles
-
-**Commands** = Quick routines (seconds/minutes)
-- `/test`, `/debug`, `/plan`, `/refactor`
-
-**Skills** = Proven methodology patterns (load on-demand)
-- How to test, debug, write, plan, architect — 22 skills available
-
-**Agents** = Expert work (minutes/hours)
-- Architecture, backend/frontend design, performance, documentation, research
-
-**Documentation** = Written to be read
-- Progressive disclosure, scannable, specific examples
-
 ## Pro Tips
 
 ✅ **Write decisions to disk** — After meaningful work, create a summary in docs/summaries/
@@ -205,34 +163,13 @@ my-project/
 └── ARCHITECTURE.md        ← System design
 ```
 
-## Getting Help
+## Reference
 
-**Don't know which command to use?**
-→ See [Command Reference](docs/command-reference.md)
-
-**Don't know which skill to load?**
-→ See [Skill Reference](docs/skill-reference.md)
-
-**Don't know which agent to use?**
-→ See [Agent Reference](docs/agent-reference.md)
-
-**Want to write good documentation?**
-→ See [Documentation Playbook](docs/documentation-playbook.md)
-
-**Have lots of documents to review?**
-→ See [Processing Protocol](docs/context/processing-protocol.md)
-
-**Setting up a new project?**
-→ See [Example Project Structure](examples/example-project-structure.md)
-
-## That's It!
-
-You're ready to use claude-workspace with your team.
-
-The commands and agents are self-explanatory—just try them out.
-
-Questions? Check the documentation or customize the agents/commands for your specific needs.
-
----
-
-**Happy building! 🚀**
+| Need | Doc |
+|------|-----|
+| Command lookup | [Command Reference](docs/command-reference.md) |
+| Skill lookup | [Skill Reference](docs/skill-reference.md) |
+| Agent lookup | [Agent Reference](docs/agent-reference.md) |
+| Writing docs | [Documentation Playbook](docs/documentation-playbook.md) |
+| Large documents | [Processing Protocol](docs/context/processing-protocol.md) |
+| New project layout | [Example Project Structure](examples/example-project-structure.md) |

@@ -117,54 +117,14 @@ For complex work:
 @deep-research-agent       # Evidence-backed research and synthesis
 ```
 
-## Common Workflows
-
-### Building a New Feature
-
-1. **Clarify requirements** → Use `@requirements-analyst`
-2. **Plan implementation** → Use `/plan` command
-3. **Develop iteratively** → Use `/test`, `/debug`, `/refactor`
-4. **Validate architecture** → Use `@system-architect`, `@backend-architect`, or `@frontend-architect`
-
-### Debugging a Bug
-
-1. **Understand the problem** → Use `/debug` command
-2. **Get reproduction steps** → Systematic investigation
-3. **Form hypotheses** → Test one at a time
-4. **Fix root cause** — Not the symptom
-5. **Verify** → Use `/test` to ensure fix works
-
-### Optimizing Performance
-
-1. **Establish baseline** → Measure current performance
-2. **Identify bottleneck** → Use `/optimize` command
-3. **Research alternatives** → `@tech-stack-researcher` if major changes
-4. **Measure and optimize** → Use `@performance-engineer` for baseline + bottlenecks
-5. **Verify** → Use `/test` to ensure nothing broke
-
-### Refactoring Code
-
-1. **Understand behavior** → Read and test existing code
-2. **Plan changes** → `/plan` command or manual planning
-3. **Make incremental changes** → One small change at a time
-4. **Test after each change** → `/test` to verify behavior preserved
-5. **Commit frequently** → Small, safe commits
-
 ## Documentation
-
-### For Your Team
 
 - **[Documentation Playbook](docs/documentation-playbook.md)** — How to write docs that teams actually use
 - **[Command Reference](docs/command-reference.md)** — Quick lookup for available commands
 - **[Skill Reference](docs/skill-reference.md)** — When to load which skill
 - **[Agent Reference](docs/agent-reference.md)** — When to use which agent
 - **[Processing Protocol](docs/context/processing-protocol.md)** — Handle large documents efficiently
-
-### For New Projects
-
-- **[Example Project Structure](examples/example-project-structure.md)** — Copy-paste directory layout and key files
-- **CLAUDE.md template** — Provided in root, customize with your project context
-- **README template** — See example structure
+- **[Example Project Structure](examples/example-project-structure.md)** — Copy-paste directory layout for new projects
 
 ## Design Philosophy
 
@@ -369,75 +329,6 @@ See [Skill Reference](docs/skill-reference.md) for all 22 skills.
 | Technical Writer | Writing or improving documentation |
 | Deep Research Agent | Research synthesis with citations |
 
-## Token Efficiency
-
-Built on research showing:
-- **5-10 rules** are effective; 15+ rules fail silently
-- **No explanatory prose** — instructions are cleaner
-- **Plain language** — "CRITICAL" and "NEVER" cause overcorrection
-- **Progressive disclosure** — Load details only when needed
-- **Session handoffs** — Pass state via structured templates, not full context
-
-Result: Better outputs with fewer tokens.
-
-## Best Practices
-
-### Use the Processing Protocol
-
-When handling 4+ documents or any >2K word document:
-1. List and prioritize
-2. Process each document individually
-3. Write summaries to disk
-4. Read summaries, not originals
-5. Cross-reference for contradictions
-
-See: [Processing Protocol](docs/context/processing-protocol.md)
-
-### Write Decisions to Disk
-
-After meaningful work:
-- **Create a summary** in `docs/summaries/`
-- **Include**: decisions with rationale, exact numbers, file paths, open questions
-- **Before session ends**: Write recovery file so you don't lose anything
-
-### Document Architecture
-
-Keep `ARCHITECTURE.md` current:
-- **Why** major decisions were made
-- **Trade-offs** considered
-- **Known bottlenecks**
-- **Growth plans**
-
-### Document as You Build
-
-Don't document after the fact:
-- **Add to README.md** as you discover gotchas
-- **Update ARCHITECTURE.md** when you change structure
-- **Write guides** as you figure out patterns
-- **Keep docs in git** alongside code
-
-## Getting Help
-
-### Understanding Your Project
-
-1. Read `CLAUDE.md` to understand goals
-2. Read `ARCHITECTURE.md` for system design
-3. Follow `docs/getting-started/` for specifics
-
-### Solving a Problem
-
-1. Check `docs/faq.md` if one exists
-2. Look for similar issues in code
-3. Create a test that reproduces the issue
-4. Debug systematically with `/debug`
-
-### Learning the Codebase
-
-1. Start with `README.md`
-2. Read `ARCHITECTURE.md`
-3. Use `/explain` command on specific code
-4. Check existing tests for usage examples
-
 ## License
 
 MIT License
@@ -448,23 +339,6 @@ This workspace combines patterns from:
 - [edmunds-claude-code](https://github.com/edmund-io/edmunds-claude-code) (MIT)
 
 See [SOURCES.md](SOURCES.md) for details.
-
-## What's Next?
-
-1. **Copy to your project** — Use the example structure
-2. **Customize CLAUDE.md** — Add your project context
-3. **Try a command** — Use `/test` or `/debug`
-4. **Read documentation** — Start with [Documentation Playbook](docs/documentation-playbook.md)
-5. **Use agents for complex work** — Try `@requirements-analyst`, `@backend-architect`, or `@system-architect`
-
-## Questions or Improvements?
-
-This is a curated, opinionated collection. Adapt it to your needs:
-- Add project-specific agents in your `.claude/`
-- Create custom commands for your workflow
-- Extend documentation for your domain
-
-The goal is a workspace you and your team actually use every day.
 
 ---
 
