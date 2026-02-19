@@ -18,6 +18,11 @@ See [SOURCES.md](SOURCES.md) for full attribution.
 - Type `/command-name` to invoke
 - See [Command Reference](docs/command-reference.md)
 
+**Skills** — Reusable patterns that teach Claude *how* to approach work
+- 22 skills covering testing, debugging, architecture, writing, performance, and more
+- Load on-demand when you need a proven methodology
+- See [Skill Reference](docs/skill-reference.md)
+
 **Agents** — Expert AI personas for complex work
 - System Architect, Backend Architect, Frontend Architect
 - Tech Stack Researcher, Requirements Analyst, Performance Engineer
@@ -151,6 +156,7 @@ For complex work:
 
 - **[Documentation Playbook](docs/documentation-playbook.md)** — How to write docs that teams actually use
 - **[Command Reference](docs/command-reference.md)** — Quick lookup for available commands
+- **[Skill Reference](docs/skill-reference.md)** — When to load which skill
 - **[Agent Reference](docs/agent-reference.md)** — When to use which agent
 - **[Processing Protocol](docs/context/processing-protocol.md)** — Handle large documents efficiently
 
@@ -172,11 +178,13 @@ For complex work:
 - Time to value: seconds to minutes
 
 **Skills** are **reusable patterns**:
-- How to test properly
-- How to debug systematically
-- How to optimize safely
-- Load on-demand when needed
-- Teaches proven approaches
+- How to test properly (Testing Trophy model)
+- How to debug systematically (four-phase root cause analysis)
+- How to optimize safely (measure-first approach)
+- How to write clearly (writer + strategy-writer personas)
+- How to architect cleanly (module boundaries, dependency management)
+- Load on-demand when needed; 22 skills across 8 categories
+- See [Skill Reference](docs/skill-reference.md)
 
 **Agents** are **expert personas**:
 - Strategic architecture decisions
@@ -204,7 +212,7 @@ claude-workspace/
 ├── SOURCES.md                          # Attribution & sources
 ├── README.md                           # This file
 │
-├── agents/                             # Expert personas
+├── agents/                             # Expert personas (9)
 │   ├── system-architect.md
 │   ├── backend-architect.md
 │   ├── frontend-architect.md
@@ -215,22 +223,49 @@ claude-workspace/
 │   ├── technical-writer.md
 │   └── deep-research-agent.md
 │
-├── commands/                           # Quick workflows
+├── commands/                           # Quick workflows (9)
 │   ├── test.md
 │   ├── debug.md
 │   ├── plan.md
 │   ├── refactor.md
 │   ├── explain.md
-│   └── optimize.md
+│   ├── optimize.md
+│   ├── perf-audit.md
+│   ├── research.md
+│   └── docs.md
+│
+├── skills/                             # Reusable patterns (22)
+│   ├── writing-tests/
+│   ├── fixing-flaky-tests/
+│   ├── condition-based-waiting/
+│   ├── systematic-debugging/
+│   ├── reading-logs/
+│   ├── refactoring-code/
+│   ├── handling-errors/
+│   ├── verification-before-completion/
+│   ├── preflight-checks/
+│   ├── writing-plans/
+│   ├── executing-plans/
+│   ├── architecting-systems/
+│   ├── migrating-code/
+│   ├── managing-databases/
+│   ├── documenting-systems/
+│   ├── documenting-code-comments/
+│   ├── writer/
+│   ├── strategy-writer/
+│   ├── optimizing-performance/
+│   ├── post-mortem/
+│   ├── design/
+│   └── visualizing-with-mermaid/
 │
 ├── docs/
 │   ├── documentation-playbook.md       # How to write docs
 │   ├── command-reference.md            # Command lookup
+│   ├── skill-reference.md              # Skill lookup
 │   ├── agent-reference.md              # Agent lookup
 │   ├── context/
 │   │   └── processing-protocol.md      # Handle large docs
-│   ├── templates/                      # Reusable templates
-│   └── examples/                       # Example outputs
+│   └── templates/                      # Reusable templates
 │
 └── examples/
     └── example-project-structure.md    # Start new projects
@@ -238,18 +273,32 @@ claude-workspace/
 
 ## Integration with Claude Code
 
-### In Claude.ai (claude.ai/code)
+### In Claude Code (CLI)
 
-Commands and agents work in Claude Code when you have this repo open:
+Copy this workspace's `agents/`, `commands/`, and `skills/` into your project's `.claude/` directory. Claude Code picks them up automatically:
 
 ```
-/test               # Available as a command
-@system-architect   # Available as an agent
-@backend-architect  # Available as an agent
-@frontend-architect # Available as an agent
-@performance-engineer # Available as an agent
-@technical-writer   # Available as an agent
-@deep-research-agent # Available as an agent
+/test                    # Run tests and analyze failures
+/debug                   # Systematic debugging
+/plan                    # Implementation planning
+/refactor                # Safe refactoring
+/explain                 # Code/concept explanation
+/optimize                # Performance optimization
+/perf-audit              # Baseline and bottleneck analysis
+/research                # Evidence-backed research
+/docs                    # Documentation workflow
+```
+
+```
+@system-architect        # Design scalable architecture
+@backend-architect       # Design reliable backend systems
+@frontend-architect      # Build accessible, performant UI
+@tech-stack-researcher   # Plan technology choices
+@requirements-analyst    # Clarify ambiguous specs
+@performance-engineer    # Measure and improve performance
+@security-engineer       # Assess security
+@technical-writer        # Create clear documentation
+@deep-research-agent     # Evidence-backed research synthesis
 ```
 
 ### In Your Project
@@ -288,6 +337,23 @@ You work with [Name], building [Project].
 | `/perf-audit` | Baseline and bottleneck analysis |
 | `/research` | Evidence-backed research needed |
 | `/docs` | Writing or improving documentation |
+
+### When to Use Skills
+
+| Skill | Load When |
+|-------|-----------|
+| `writing-tests` | Writing tests; choosing test strategy |
+| `systematic-debugging` | Investigating bugs or unexpected behavior |
+| `refactoring-code` | Cleaning up or restructuring code |
+| `verification-before-completion` | Before claiming any task is done |
+| `writing-plans` | Planning a feature or migration |
+| `optimizing-performance` | Addressing slow code |
+| `writer` | Writing docs, READMEs, commit messages |
+| `strategy-writer` | Executive-facing strategic documents |
+| `visualizing-with-mermaid` | Creating architecture diagrams |
+| `post-mortem` | Reviewing a session for improvements |
+
+See [Skill Reference](docs/skill-reference.md) for all 22 skills.
 
 ### When to Use Agents
 

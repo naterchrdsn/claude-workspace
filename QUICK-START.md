@@ -8,11 +8,12 @@ A production-ready collection of **agents**, **commands**, and **documentation**
 
 - ✅ 9 Specialized agents (System Architect, Backend Architect, Frontend Architect, Tech Stack Researcher, Requirements Analyst, Performance Engineer, Security Engineer, Technical Writer, Deep Research Agent)
 - ✅ 9 Core commands (Test, Debug, Plan, Refactor, Explain, Optimize, Perf Audit, Research, Docs)
+- ✅ 22 Skills covering testing, debugging, architecture, writing, performance, and more
 - ✅ Documentation playbook and example project structure
 - ✅ Processing protocol for handling large documents efficiently
 - ✅ Everything is research-backed and practical
 
-**Total:** ~500KB, ready to copy into any project
+**Total:** Ready to copy into any project
 
 ## Step 1: Copy to Your Project (2 min)
 
@@ -86,9 +87,28 @@ In Claude Code or Claude.ai, use commands directly:
 /docs "goal"        # Documentation task
 ```
 
-## Step 4: Use Agents (Optional, 1 min)
+## Step 4: Load Skills (Optional)
 
-For complex decisions:
+For proven methodologies:
+
+```
+writing-tests              # Testing Trophy model, behavior-focused
+systematic-debugging       # Four-phase root cause analysis
+refactoring-code           # Behavior-preserving refactoring
+verification-before-completion  # Confirm work is done
+writing-plans              # Implementation plan structure
+optimizing-performance     # Measure-first optimization
+writer                     # Human-sounding docs and READMEs
+strategy-writer            # Executive-quality strategic docs
+visualizing-with-mermaid   # Architecture and flow diagrams
+post-mortem                # Session review for improvements
+```
+
+See [Skill Reference](docs/skill-reference.md) for all 22 skills and when to load each.
+
+## Step 5: Use Agents (Optional)
+
+For complex, multi-step decisions:
 
 ```
 @system-architect        # Design architecture
@@ -102,12 +122,13 @@ For complex decisions:
 @deep-research-agent     # Research synthesis
 ```
 
-## Step 5: Read Key Documentation
+## Step 6: Read Key Documentation
 
 When you need guidance:
 
 - **[Documentation Playbook](docs/documentation-playbook.md)** — How to write docs
 - **[Command Reference](docs/command-reference.md)** — All commands explained
+- **[Skill Reference](docs/skill-reference.md)** — All 22 skills and when to load each
 - **[Agent Reference](docs/agent-reference.md)** — When to use agents
 - **[Example Project Structure](examples/example-project-structure.md)** — Directory layout template
 
@@ -143,6 +164,9 @@ You now have a Claude workspace configured for your project.
 
 **Commands** = Quick routines (seconds/minutes)
 - `/test`, `/debug`, `/plan`, `/refactor`
+
+**Skills** = Proven methodology patterns (load on-demand)
+- How to test, debug, write, plan, architect — 22 skills available
 
 **Agents** = Expert work (minutes/hours)
 - Architecture, backend/frontend design, performance, documentation, research
@@ -185,6 +209,9 @@ my-project/
 
 **Don't know which command to use?**
 → See [Command Reference](docs/command-reference.md)
+
+**Don't know which skill to load?**
+→ See [Skill Reference](docs/skill-reference.md)
 
 **Don't know which agent to use?**
 → See [Agent Reference](docs/agent-reference.md)

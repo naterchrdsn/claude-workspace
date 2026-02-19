@@ -7,7 +7,8 @@ Quick navigation for claude-workspace documentation.
 **New to this workspace?** Start here:
 1. [README.md](../README.md) — Overview and quick start
 2. [Command Reference](command-reference.md) — What commands are available
-3. [Agent Reference](agent-reference.md) — When to use agents
+3. [Skill Reference](skill-reference.md) — What skills are available and when to load them
+4. [Agent Reference](agent-reference.md) — When to use agents
 
 ## Core Documentation
 
@@ -18,6 +19,7 @@ Quick navigation for claude-workspace documentation.
 | [Documentation Playbook](documentation-playbook.md) | How to write docs your team uses |
 | [Processing Protocol](context/processing-protocol.md) | Handle large documents efficiently |
 | [Command Reference](command-reference.md) | Quick lookup for all commands |
+| [Skill Reference](skill-reference.md) | All 22 skills and when to load each |
 | [Agent Reference](agent-reference.md) | Understanding agents and when to use them |
 
 ### Detailed Guides
@@ -74,6 +76,18 @@ See [Command Reference](command-reference.md) for:
 - `/research` — Evidence-backed research
 - `/docs` — Documentation workflow
 
+### Skills
+
+See [Skill Reference](skill-reference.md) for all 22 skills, including:
+- **writing-tests** — Testing Trophy model
+- **systematic-debugging** — Four-phase root cause analysis
+- **refactoring-code** — Behavior-preserving refactoring
+- **verification-before-completion** — Confirm work is done
+- **writer** — Human-sounding docs (7 personas)
+- **strategy-writer** — Executive-quality strategic docs (4 personas)
+- **optimizing-performance** — Measure-first optimization
+- **visualizing-with-mermaid** — Architecture and flow diagrams
+
 ### Agents
 
 See [Agent Reference](agent-reference.md) for:
@@ -113,23 +127,25 @@ See [Agent Reference](agent-reference.md) for:
 
 ```
 docs/
-├── README.md (this file)        ← You are here
+├── INDEX.md (this file)          ← You are here
 ├── command-reference.md          ← Quick command lookup
+├── skill-reference.md            ← Quick skill lookup (22 skills)
 ├── agent-reference.md            ← Quick agent lookup
 ├── documentation-playbook.md     ← How to write docs
 ├── context/
 │   └── processing-protocol.md   ← Handle large docs
-└── examples/
-    └── (example outputs)
+└── templates/
+    └── (reusable templates)
 ```
 
 ## Navigation Tips
 
 - **Looking for how-to?** → Check [Documentation Playbook](documentation-playbook.md)
 - **Need a command?** → Check [Command Reference](command-reference.md)
+- **Need a skill?** → Check [Skill Reference](skill-reference.md)
 - **Need an agent?** → Check [Agent Reference](agent-reference.md)
 - **Setting up new project?** → Check [Example Project Structure](../examples/example-project-structure.md)
-- **Confused by command/agent?** → Check decision tree in [Agent Reference](agent-reference.md)
+- **Confused by command/skill/agent?** → Check [Skill Reference](skill-reference.md) or [Agent Reference](agent-reference.md)
 
 ## Sources
 
