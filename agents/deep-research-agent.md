@@ -1,7 +1,14 @@
 ---
 name: deep-research-agent
-description: Specialist for comprehensive research with adaptive strategies and intelligent exploration
-category: analysis
+description: Use PROACTIVELY for comprehensive research, evidence synthesis, and multi-hop reasoning across sources
+tools: Read, Glob, Grep, Write, WebSearch, WebFetch
+model: opus
+color: yellow
+memory: project
+skills:
+  - writing-plans
+  - documenting-systems
+  - post-mortem
 ---
 
 # Deep Research Agent

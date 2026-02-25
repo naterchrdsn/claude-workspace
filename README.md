@@ -1,45 +1,73 @@
 # Claude Workspace
 
-A curated, production-ready collection of **agents**, **commands**, **skills**, and **documentation best practices** for using Claude in any project.
+A curated, production-ready collection of **agents**, **commands**, **skills**, and **subagent orchestration patterns** for using Claude in any project.
 
-Combines research and expertise from three excellent sources:
+**New in this version:** Full subagent orchestration support with the **Command → Agent → Skills** architecture pattern and the **RPI workflow** (Research → Plan → Implement).
+
+Combines research and expertise from multiple sources:
 - **claude-context-os** — Research-backed prompt design
 - **claude-essentials** — Clean command/skill architecture
 - **edmunds-claude-code** — Specialized agent patterns
+- **shanraisshan/claude-code-best-practice** — Subagent orchestration patterns
 
 See [SOURCES.md](SOURCES.md) for full attribution.
 
 ## What's Inside
 
-### 🚀 Ready to Use
+### Subagent Orchestration (NEW)
 
-**Commands** — Quick workflows for development tasks
+The **Command → Agent → Skills** pattern enables cost-effective, high-quality AI workflows:
+
+```
+Command (haiku, cheap)
+    ↓ Task tool
+Agent (sonnet/opus, powerful)
+    ↓ Preloaded
+Skills (domain knowledge)
+```
+
+**Orchestrated Commands:**
+- `/orchestrate-review <path>` — Code review with structured output
+- `/rpi:research <request.md>` — GO/NO-GO feasibility analysis
+- `/rpi:plan <feature-slug>` — Multi-perspective implementation plan
+- `/rpi:implement <feature-slug>` — Phased execution with validation
+
+**Documentation:**
+- [Orchestration Guide](docs/orchestration-guide.md) — How to build orchestrated workflows
+- [RPI Workflow](docs/workflows/rpi-workflow.md) — Research → Plan → Implement
+- [Orchestration Example](examples/orchestration/README.md) — Code review example
+
+### Ready to Use
+
+**Commands** — Quick workflows for development tasks (12 commands)
 - Test, Debug, Plan, Refactor, Explain, Optimize, Perf Audit, Research, Docs
+- Orchestrated: orchestrate-review, rpi:research, rpi:plan, rpi:implement
 - Type `/command-name` to invoke
 - See [Command Reference](docs/command-reference.md)
 
 **Skills** — Reusable patterns that teach Claude *how* to approach work
 - 22 skills covering testing, debugging, architecture, writing, performance, and more
-- Load on-demand when you need a proven methodology
+- Preloaded into agents or loaded on-demand
 - See [Skill Reference](docs/skill-reference.md)
 
-**Agents** — Expert AI personas for complex work
+**Agents** — Expert AI personas with preloaded skills (10 agents)
 - System Architect, Backend Architect, Frontend Architect
 - Tech Stack Researcher, Requirements Analyst, Performance Engineer
 - Security Engineer, Technical Writer, Deep Research Agent
-- Use for strategic decisions and deep analysis
+- Code Review Agent (NEW)
+- All agents have enhanced frontmatter with tools, skills, and model config
 - See [Agent Reference](docs/agent-reference.md)
 
-**Documentation**
-- [Documentation Playbook](docs/documentation-playbook.md) — How to write docs that teams use
-- [Processing Protocol](docs/context/processing-protocol.md) — Handle large documents efficiently
-- [Example Project Structure](examples/example-project-structure.md) — Start new projects right
+**Presentation Materials** (NEW)
+- [Subagent Orchestration Presentation](presentation/SUBAGENT-ORCHESTRATION.md) — CTO-ready presentation
+- [Quick Reference](presentation/QUICK-REFERENCE.md) — Team adoption cheat sheet
 
-### 🎯 Core Concepts
+### Core Concepts
 
 **CLAUDE.md** — Your Claude workspace configuration
 - Focuses on what matters (removed unnecessary rules)
 - Progressive disclosure (load tools on-demand)
+- Subagent orchestration patterns
 - Session handoff patterns
 - Research-backed design
 
@@ -48,15 +76,44 @@ See [SOURCES.md](SOURCES.md) for full attribution.
 ### 1. Copy to Your Project
 
 ```bash
-# Copy claude-workspace to your project
-cp -r /path/to/claude-workspace .claude-workspace
+# Copy claude-workspace to your project's .claude directory
+cp -r /path/to/claude-workspace/.  your-project/.claude/
 
-# Or in your existing project
-cp /path/to/CLAUDE.md mynewproject/CLAUDE.md
-cp -r /path/to/docs mynewproject/docs
+# Or copy specific components
+cp -r /path/to/claude-workspace/agents your-project/.claude/
+cp -r /path/to/claude-workspace/commands your-project/.claude/
+cp -r /path/to/claude-workspace/skills your-project/.claude/
 ```
 
-### 2. Customize for Your Project
+### 2. Try Orchestrated Review
+
+```bash
+# Run an orchestrated code review
+/orchestrate-review src/api/
+
+# This invokes code-review-agent via Task tool
+# Agent uses preloaded debugging, refactoring, and verification skills
+# Output goes to docs/reviews/
+```
+
+### 3. Try RPI Workflow
+
+```bash
+# Create a feature request
+mkdir -p rpi/my-feature
+# Edit rpi/my-feature/REQUEST.md with your feature description
+
+# Phase 1: Research (GO/NO-GO)
+/rpi:research rpi/my-feature/REQUEST.md
+
+# Phase 2: Plan (if GO)
+/rpi:plan my-feature
+
+# Phase 3: Implement
+/rpi:implement my-feature
+```
+
+### 4. Customize for Your Project
 
 Edit `.claude/CLAUDE.md` with your project context:
 
@@ -71,7 +128,7 @@ MyProject: [One-line description]
 
 - Runtime: Node.js
 - Frontend: React + TypeScript
-- Database: PostgreSQL  
+- Database: PostgreSQL
 - Key Services: [List them]
 
 ## Where Things Live
@@ -85,77 +142,34 @@ MyProject: [One-line description]
 [What's being built this quarter]
 ```
 
-### 3. Use Commands
-
-In Claude Code or Claude.ai:
-
-```
-/test               # Run tests and analyze failures
-/debug "bug issue"  # Debug a specific problem
-/plan "feature"     # Create implementation plan
-/refactor "code"    # Refactor safely
-/explain "concept"  # Explain code or idea
-/optimize "slow"    # Fix performance issues
-/perf-audit "flow"  # Measure and optimize performance
-/research "topic"   # Evidence-backed research
-/docs "goal"        # Create or improve documentation
-```
-
-### 4. Use Agents
-
-For complex work:
-
-```
-@system-architect          # Design scalable architecture
-@backend-architect         # Design reliable backend systems
-@frontend-architect        # Build accessible, performant UI
-@tech-stack-researcher     # Plan technology choices
-@requirements-analyst      # Clarify ambiguous specs
-@performance-engineer      # Measure and improve performance
-@security-engineer         # Assess security
-@technical-writer          # Create clear documentation
-@deep-research-agent       # Evidence-backed research and synthesis
-```
-
-## Documentation
-
-- **[Documentation Playbook](docs/documentation-playbook.md)** — How to write docs that teams actually use
-- **[Command Reference](docs/command-reference.md)** — Quick lookup for available commands
-- **[Skill Reference](docs/skill-reference.md)** — When to load which skill
-- **[Agent Reference](docs/agent-reference.md)** — When to use which agent
-- **[Processing Protocol](docs/context/processing-protocol.md)** — Handle large documents efficiently
-- **[Example Project Structure](examples/example-project-structure.md)** — Copy-paste directory layout for new projects
-
 ## Design Philosophy
 
-### Commands vs. Skills vs. Agents
+### The Orchestration Pattern
 
-**Commands** are for **quick, routine tasks**:
-- Run tests
-- Debug a specific issue  
-- Create a plan
-- Refactor code
-- Time to value: seconds to minutes
+**Commands** are **entry points** (lightweight):
+- Orchestrate workflows using haiku model
+- Invoke agents via Task tool
+- Present results to user
 
-**Skills** are **reusable patterns**:
-- How to test properly (Testing Trophy model)
-- How to debug systematically (four-phase root cause analysis)
-- How to optimize safely (measure-first approach)
-- How to write clearly (writer + strategy-writer personas)
-- How to architect cleanly (module boundaries, dependency management)
-- Load on-demand when needed; 22 skills across 8 categories
-- See [Skill Reference](docs/skill-reference.md)
+**Agents** are **domain experts** (powerful):
+- Do heavy lifting with sonnet/opus models
+- Have preloaded skills for domain knowledge
+- Explicit tool access (Read, Write, Grep, etc.)
 
-**Agents** are **expert personas**:
-- Strategic architecture decisions
-- Technology research and planning
-- Requirements clarification
-- Performance optimization and profiling
-- Documentation design and clarity
-- Security assessment
-- Deep research and synthesis
-- Time to value: minutes to hours
-- Deep, sustained focus
+**Skills** are **injectable knowledge**:
+- Methodologies and patterns
+- Preloaded into agent context at startup
+- Not invoked separately—reference material
+
+### Cost Optimization
+
+| Component | Model | Cost | Purpose |
+|-----------|-------|------|---------|
+| Command | haiku | $0.25/M tokens | Orchestrate |
+| Agent | sonnet | $3/M tokens | Analyze |
+| Agent | opus | $15/M tokens | Strategize |
+
+Smart routing can reduce costs by **10x** while maintaining quality.
 
 ### Key Principles
 
@@ -163,6 +177,7 @@ For complex work:
 2. **Research-Backed** — Based on peer-reviewed papers and real usage
 3. **Focused** — Fewer rules that actually matter > many rules ignored
 4. **Practical** — Every recommendation is actionable
+5. **Cost-Effective** — Use the right model for each task
 
 ## Project Structure
 
@@ -172,18 +187,19 @@ claude-workspace/
 ├── SOURCES.md                          # Attribution & sources
 ├── README.md                           # This file
 │
-├── agents/                             # Expert personas (9)
-│   ├── system-architect.md
-│   ├── backend-architect.md
-│   ├── frontend-architect.md
-│   ├── tech-stack-researcher.md
-│   ├── requirements-analyst.md
-│   ├── performance-engineer.md
-│   ├── security-engineer.md
-│   ├── technical-writer.md
-│   └── deep-research-agent.md
+├── agents/                             # Expert personas (10)
+│   ├── system-architect.md             # Architecture design (opus)
+│   ├── backend-architect.md            # APIs, databases (sonnet)
+│   ├── frontend-architect.md           # UI, accessibility (sonnet)
+│   ├── tech-stack-researcher.md        # Technology evaluation (sonnet)
+│   ├── requirements-analyst.md         # Requirements clarity (sonnet)
+│   ├── performance-engineer.md         # Performance optimization (sonnet)
+│   ├── security-engineer.md            # Security audits (sonnet)
+│   ├── technical-writer.md             # Documentation (sonnet)
+│   ├── deep-research-agent.md          # Research synthesis (opus)
+│   └── code-review-agent.md            # Code quality review (sonnet) [NEW]
 │
-├── commands/                           # Quick workflows (9)
+├── commands/                           # Quick workflows (12)
 │   ├── test.md
 │   ├── debug.md
 │   ├── plan.md
@@ -192,99 +208,56 @@ claude-workspace/
 │   ├── optimize.md
 │   ├── perf-audit.md
 │   ├── research.md
-│   └── docs.md
+│   ├── docs.md
+│   ├── orchestrate-review.md           # [NEW] Orchestrated code review
+│   └── rpi/                            # [NEW] RPI workflow
+│       ├── research.md                 # GO/NO-GO analysis
+│       ├── plan.md                     # Multi-perspective planning
+│       └── implement.md                # Phased execution
 │
 ├── skills/                             # Reusable patterns (22)
-│   ├── writing-tests/
-│   ├── fixing-flaky-tests/
-│   ├── condition-based-waiting/
-│   ├── systematic-debugging/
-│   ├── reading-logs/
-│   ├── refactoring-code/
-│   ├── handling-errors/
-│   ├── verification-before-completion/
-│   ├── preflight-checks/
-│   ├── writing-plans/
-│   ├── executing-plans/
-│   ├── architecting-systems/
-│   ├── migrating-code/
-│   ├── managing-databases/
-│   ├── documenting-systems/
-│   ├── documenting-code-comments/
-│   ├── writer/
-│   ├── strategy-writer/
-│   ├── optimizing-performance/
-│   ├── post-mortem/
-│   ├── design/
-│   └── visualizing-with-mermaid/
+│   └── [22 skill directories]
 │
 ├── docs/
-│   ├── documentation-playbook.md       # How to write docs
-│   ├── command-reference.md            # Command lookup
-│   ├── skill-reference.md              # Skill lookup
-│   ├── agent-reference.md              # Agent lookup
+│   ├── orchestration-guide.md          # [NEW] How to orchestrate
+│   ├── workflows/
+│   │   └── rpi-workflow.md             # [NEW] RPI documentation
+│   ├── documentation-playbook.md
+│   ├── command-reference.md
+│   ├── skill-reference.md
+│   ├── agent-reference.md
 │   ├── context/
-│   │   └── processing-protocol.md      # Handle large docs
-│   └── templates/                      # Reusable templates
+│   │   └── processing-protocol.md
+│   ├── templates/
+│   └── reviews/                        # [NEW] Review output location
 │
-└── examples/
-    └── example-project-structure.md    # Start new projects
-```
-
-## Integration with Claude Code
-
-### In Claude Code (CLI)
-
-Copy this workspace's `agents/`, `commands/`, and `skills/` into your project's `.claude/` directory. Claude Code picks them up automatically:
-
-```
-/test                    # Run tests and analyze failures
-/debug                   # Systematic debugging
-/plan                    # Implementation planning
-/refactor                # Safe refactoring
-/explain                 # Code/concept explanation
-/optimize                # Performance optimization
-/perf-audit              # Baseline and bottleneck analysis
-/research                # Evidence-backed research
-/docs                    # Documentation workflow
-```
-
-```
-@system-architect        # Design scalable architecture
-@backend-architect       # Design reliable backend systems
-@frontend-architect      # Build accessible, performant UI
-@tech-stack-researcher   # Plan technology choices
-@requirements-analyst    # Clarify ambiguous specs
-@performance-engineer    # Measure and improve performance
-@security-engineer       # Assess security
-@technical-writer        # Create clear documentation
-@deep-research-agent     # Evidence-backed research synthesis
-```
-
-### In Your Project
-
-Create `.claude/CLAUDE.md` with project context:
-
-```markdown
-# CLAUDE.md
-
-You work with [Name], building [Project].
-
-## Where Things Live
-
-- Code: src/
-- Tests: tests/
-- Docs: docs/
-- Architecture: ARCHITECTURE.md
-
-## Current Focus
-
-[What you're working on]
+├── examples/
+│   ├── orchestration/                  # [NEW] Orchestration example
+│   │   └── README.md
+│   ├── rpi-template/                   # [NEW] RPI feature template
+│   │   ├── REQUEST.md
+│   │   ├── research/
+│   │   ├── plan/
+│   │   └── implement/
+│   └── example-project-structure.md
+│
+└── presentation/                       # [NEW] CTO presentation materials
+    ├── SUBAGENT-ORCHESTRATION.md       # Full presentation
+    └── QUICK-REFERENCE.md              # Team cheat sheet
 ```
 
 ## Quick Reference
 
-### When to Use Commands
+### Orchestrated Commands
+
+| Command | Purpose | Agents Used |
+|---------|---------|-------------|
+| `/orchestrate-review <path>` | Code review | code-review-agent |
+| `/rpi:research <request>` | GO/NO-GO | requirements-analyst, tech-stack-researcher, system-architect |
+| `/rpi:plan <slug>` | Planning | requirements-analyst, frontend-architect, backend-architect |
+| `/rpi:implement <slug>` | Execution | code-review-agent, technical-writer, others |
+
+### Standard Commands
 
 | Command | Use When |
 |---------|----------|
@@ -298,36 +271,29 @@ You work with [Name], building [Project].
 | `/research` | Evidence-backed research needed |
 | `/docs` | Writing or improving documentation |
 
-### When to Use Skills
-
-| Skill | Load When |
-|-------|-----------|
-| `writing-tests` | Writing tests; choosing test strategy |
-| `systematic-debugging` | Investigating bugs or unexpected behavior |
-| `refactoring-code` | Cleaning up or restructuring code |
-| `verification-before-completion` | Before claiming any task is done |
-| `writing-plans` | Planning a feature or migration |
-| `optimizing-performance` | Addressing slow code |
-| `writer` | Writing docs, READMEs, commit messages |
-| `strategy-writer` | Executive-facing strategic documents |
-| `visualizing-with-mermaid` | Creating architecture diagrams |
-| `post-mortem` | Reviewing a session for improvements |
-
-See [Skill Reference](docs/skill-reference.md) for all 22 skills.
-
 ### When to Use Agents
 
-| Agent | Use When |
-|-------|----------|
-| System Architect | Designing system architecture |
-| Backend Architect | Designing APIs and data systems |
-| Frontend Architect | UX, accessibility, and UI architecture |
-| Tech Stack Researcher | Planning new tech choices |
-| Requirements Analyst | Specs are vague/unclear |
-| Performance Engineer | Measuring and improving performance |
-| Security Engineer | Security assessment needed |
-| Technical Writer | Writing or improving documentation |
-| Deep Research Agent | Research synthesis with citations |
+| Agent | Model | Use When |
+|-------|-------|----------|
+| system-architect | opus | System architecture, scalability |
+| backend-architect | sonnet | APIs, databases, security |
+| frontend-architect | sonnet | UI, accessibility, performance |
+| tech-stack-researcher | sonnet | Technology evaluation |
+| requirements-analyst | sonnet | Vague specs, discovery |
+| performance-engineer | sonnet | Profiling, optimization |
+| security-engineer | sonnet | Security assessment |
+| technical-writer | sonnet | Documentation |
+| deep-research-agent | opus | Research synthesis |
+| code-review-agent | sonnet | Code quality review |
+
+## For CTOs and Team Leads
+
+See [presentation/SUBAGENT-ORCHESTRATION.md](presentation/SUBAGENT-ORCHESTRATION.md) for:
+- Executive summary of subagent orchestration
+- Cost/benefit analysis
+- Demo script
+- Team adoption path
+- Metrics to track
 
 ## License
 
@@ -337,9 +303,10 @@ This workspace combines patterns from:
 - [claude-context-os](https://github.com/Arkya-AI/claude-context-os) (MIT)
 - [claude-essentials](https://github.com/rileyhilliard/claude-essentials) (MIT)
 - [edmunds-claude-code](https://github.com/edmund-io/edmunds-claude-code) (MIT)
+- [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) (reference)
 
 See [SOURCES.md](SOURCES.md) for details.
 
 ---
 
-**Built to help you work smarter with Claude.**
+**Built to help you work smarter with Claude through intelligent orchestration.**

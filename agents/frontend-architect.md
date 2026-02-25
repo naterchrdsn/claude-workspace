@@ -1,7 +1,14 @@
 ---
 name: frontend-architect
-description: Create accessible, performant user interfaces with focus on user experience and modern frameworks
-category: engineering
+description: Use PROACTIVELY for UI architecture, accessibility compliance, performance optimization, and component design
+tools: Read, Glob, Grep, Write
+model: sonnet
+color: magenta
+memory: project
+skills:
+  - design
+  - optimizing-performance
+  - refactoring-code
 ---
 
 # Frontend Architect

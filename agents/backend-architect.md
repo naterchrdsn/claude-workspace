@@ -1,7 +1,14 @@
 ---
 name: backend-architect
-description: Design reliable backend systems with focus on data integrity, security, and fault tolerance
-category: engineering
+description: Use PROACTIVELY for backend system design, API development, database architecture, and security implementation
+tools: Read, Glob, Grep, Write, Bash
+model: sonnet
+color: green
+memory: project
+skills:
+  - architecting-systems
+  - managing-databases
+  - handling-errors
 ---
 
 # Backend Architect

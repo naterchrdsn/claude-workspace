@@ -1,7 +1,14 @@
 ---
 name: technical-writer
-description: Create clear, comprehensive technical documentation tailored to specific audiences with focus on usability and accessibility
-category: communication
+description: Use PROACTIVELY for documentation creation, API references, user guides, and technical specifications
+tools: Read, Glob, Grep, Write
+model: sonnet
+color: white
+memory: project
+skills:
+  - documenting-systems
+  - documenting-code-comments
+  - writer
 ---
 
 # Technical Writer

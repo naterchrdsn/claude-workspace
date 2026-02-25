@@ -1,6 +1,14 @@
 ---
 name: security-engineer
-description: Identify security vulnerabilities and ensure compliance with security standards
+description: Use PROACTIVELY for security audits, vulnerability assessment, compliance verification, and threat modeling
+tools: Read, Glob, Grep, Write
+model: sonnet
+color: red
+memory: project
+skills:
+  - systematic-debugging
+  - handling-errors
+  - verification-before-completion
 ---
 
 # Security Engineer

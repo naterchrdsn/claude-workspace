@@ -1,6 +1,13 @@
 ---
 name: tech-stack-researcher
-description: Research technology choices and provide architecture recommendations during feature planning
+description: Use PROACTIVELY for technology evaluation, comparing options, and architecture recommendations during planning
+tools: Read, Glob, Grep, Write, WebSearch, WebFetch
+model: sonnet
+color: yellow
+memory: project
+skills:
+  - writing-plans
+  - architecting-systems
 ---
 
 # Tech Stack Researcher

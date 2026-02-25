@@ -1,6 +1,14 @@
 ---
 name: system-architect
-description: Design scalable system architecture with focus on maintainability and long-term technical decisions
+description: Use PROACTIVELY for system architecture design, scalability analysis, and long-term technical decisions
+tools: Read, Glob, Grep, Write, WebSearch
+model: opus
+color: blue
+memory: project
+skills:
+  - architecting-systems
+  - writing-plans
+  - visualizing-with-mermaid
 ---
 
 # System Architect

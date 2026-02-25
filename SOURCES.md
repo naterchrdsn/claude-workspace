@@ -1,6 +1,6 @@
 # Sources & Attribution
 
-This workspace is a curated collection of best practices, agents, commands, and documentation patterns from three excellent source repositories.
+This workspace is a curated collection of best practices, agents, commands, and documentation patterns from four excellent source repositories.
 
 ## Source Repositories
 
@@ -81,6 +81,46 @@ This workspace is a curated collection of best practices, agents, commands, and 
 
 ---
 
+### 4. claude-code-best-practice
+**GitHub:** [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice)
+**Stars:** 4.7k+
+**License:** Reference/Educational
+
+**What We Curated:**
+- Subagent orchestration patterns (Command → Agent → Skills)
+- RPI workflow (Research → Plan → Implement)
+- Agent frontmatter best practices (tools, skills, model, memory)
+- Task tool invocation patterns
+- Multi-agent pipeline design
+
+**Key Contributions:**
+- The orchestration architecture pattern
+- Enhanced agent frontmatter schema
+- RPI phased workflow with validation gates
+- Self-evolving agent patterns
+- Cost optimization through model routing (haiku → sonnet → opus)
+- Hooks system for lifecycle automation
+
+**Key Insights from claude-code-best-practice:**
+- Commands should use haiku for orchestration, agents use sonnet/opus for work
+- Skills are preloaded into agent context, not dynamically invoked
+- Validation gates (GO/NO-GO) prevent wasted effort on non-viable features
+- Agent memory enables persistent learning across sessions
+- The Task tool is the only correct way to invoke subagents (never bash)
+- Multi-perspective planning (PM, UX, Engineering) produces better outcomes
+- Phased implementation with exit criteria ensures quality
+
+**Notable Patterns:**
+- **Weather Orchestration Example**: Clean demonstration of Command → Agent → Skills
+- **Presentation Curator**: Self-evolving agent that updates its own skills
+- **RPI Workflow**: Systematic feature development with research gates
+- **Settings Hierarchy**: Team-shared vs personal configuration
+
+**Why This Source Matters:**
+This repository (4.7k stars) represents real-world Claude Code usage at scale. It demonstrates that orchestration isn't theoretical—it's how teams effectively use Claude for complex, multi-step work. The emphasis on cost optimization (10x savings through smart model routing) and validation gates makes it practical for enterprise adoption.
+
+---
+
 ## What We Built
 
 This `claude-workspace` combines the strengths:
@@ -88,11 +128,14 @@ This `claude-workspace` combines the strengths:
 | Component | Source | Why This One |
 |-----------|--------|-------------|
 | **CLAUDE.md** | context-os + essentials | Research-backed, clean structure |
-| **Agents** | edmunds-claude-code | Complete implementations, clear triggers |
-| **Commands** | claude-essentials | Practical workflows |
+| **Agents** | edmunds + best-practice | Complete implementations + enhanced frontmatter |
+| **Commands** | essentials + best-practice | Practical workflows + orchestration |
+| **Orchestration** | best-practice | Command → Agent → Skills pattern |
+| **RPI Workflow** | best-practice | Research → Plan → Implement with gates |
 | **Documentation Playbook** | context-os | Best practices + structures |
 | **Processing Protocol** | context-os | Proven method for large documents |
 | **Example Project Layout** | essentials (adapted) | Ready-to-use structure |
+| **Presentation Materials** | best-practice (adapted) | CTO-ready orchestration guide |
 
 ## License
 
@@ -113,6 +156,15 @@ This workspace is MIT-licensed.
 ### If You Want Expert Agents
 → Reference agents in `/agents/` and patterns in `docs/agent-reference.md`
 
+### If You Want Subagent Orchestration
+→ Read `docs/orchestration-guide.md` and study `examples/orchestration/`
+
+### If You Want Phased Feature Development
+→ Use the RPI workflow in `commands/rpi/` with `docs/workflows/rpi-workflow.md`
+
+### If You Want to Present to Leadership
+→ Use `presentation/SUBAGENT-ORCHESTRATION.md` and `presentation/QUICK-REFERENCE.md`
+
 ### If You Want to Document Well
 → Read `docs/documentation-playbook.md` and use `examples/example-project-structure.md`
 
@@ -128,6 +180,7 @@ If you improve this workspace:
 - **claude-context-os**: Deep dive into research-backed system prompts
 - **claude-essentials**: Complete plugin architecture and patterns
 - **edmunds-claude-code**: Domain-specific agent design
+- **claude-code-best-practice**: Subagent orchestration and enterprise patterns
 
 ## Acknowledgments
 
@@ -135,5 +188,6 @@ Credit to:
 - **Arkya-AI** for research-backed prompt design and context management
 - **Riley Hilliard** for clean plugin architecture and practical commands
 - **Edmund Edmunds** for specialized agent design patterns
+- **Shan Raisshan** for subagent orchestration patterns and the RPI workflow
 
 This resource stands on their excellent work.

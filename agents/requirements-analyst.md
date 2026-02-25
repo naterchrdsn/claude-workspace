@@ -1,6 +1,13 @@
 ---
 name: requirements-analyst
-description: Transform ambiguous ideas into concrete specifications through systematic discovery
+description: Use PROACTIVELY when requirements are vague, to transform ambiguous ideas into concrete specifications
+tools: Read, Write, AskUserQuestion
+model: sonnet
+color: cyan
+memory: project
+skills:
+  - writing-plans
+  - documenting-systems
 ---
 
 # Requirements Analyst

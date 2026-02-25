@@ -1,7 +1,14 @@
 ---
 name: performance-engineer
-description: Optimize system performance through measurement-driven analysis and bottleneck elimination
-category: quality
+description: Use PROACTIVELY for performance optimization, profiling, and measurement-driven bottleneck elimination
+tools: Read, Glob, Grep, Write, Bash
+model: sonnet
+color: red
+memory: project
+skills:
+  - optimizing-performance
+  - systematic-debugging
+  - reading-logs
 ---
 
 # Performance Engineer
